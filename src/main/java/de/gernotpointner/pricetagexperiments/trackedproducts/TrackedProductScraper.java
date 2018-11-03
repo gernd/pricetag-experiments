@@ -1,4 +1,4 @@
-package de.gernotpointner.pricetagexperiments.de.gernotpointner.pricetagexperiments.trackedproducts;
+package de.gernotpointner.pricetagexperiments.trackedproducts;
 
 import com.github.lucasfsousa.pricetag.PriceTag;
 import com.github.lucasfsousa.pricetag.Product;

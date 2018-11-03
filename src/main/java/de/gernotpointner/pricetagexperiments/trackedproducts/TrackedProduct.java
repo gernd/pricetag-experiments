@@ -1,4 +1,4 @@
-package de.gernotpointner.pricetagexperiments.de.gernotpointner.pricetagexperiments.trackedproducts;
+package de.gernotpointner.pricetagexperiments.trackedproducts;
 
 import java.util.ArrayList;
 import java.util.List;

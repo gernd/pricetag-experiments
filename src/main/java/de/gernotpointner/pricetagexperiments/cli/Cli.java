@@ -1,8 +1,8 @@
 package de.gernotpointner.pricetagexperiments.cli;
 
 import com.github.lucasfsousa.pricetag.Product;
-import de.gernotpointner.pricetagexperiments.de.gernotpointner.pricetagexperiments.trackedproducts.TrackedProduct;
-import de.gernotpointner.pricetagexperiments.de.gernotpointner.pricetagexperiments.trackedproducts.TrackedProductScraper;
+import de.gernotpointner.pricetagexperiments.trackedproducts.TrackedProduct;
+import de.gernotpointner.pricetagexperiments.trackedproducts.TrackedProductScraper;
 import de.gernotpointner.pricetagexperiments.scraping.ScrapedProduct;
 
 import java.util.ArrayList;
@@ -40,9 +40,11 @@ public class Cli {
 
             System.out.println("Product name " + scrapedProduct.name);
             successfullyScrapedProducts.forEach(product -> {
+                System.out.println("----------------------------------------");
+                System.out.println("Store: " + product.getStore());
+                System.out.println("----------------------------------------");
                 System.out.println("Brand: " + product.getBrand());
                 System.out.println("Price: " + product.getPriceAsText());
-                System.out.println("Store: " + product.getStore());
                 System.out.println("Title: " + product.getTitle());
                 System.out.println("Country Code: " + product.getCountryCode());
                 System.out.println("URL: " + product.getUrl());

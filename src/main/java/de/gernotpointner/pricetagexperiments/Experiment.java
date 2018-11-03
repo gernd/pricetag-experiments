@@ -4,8 +4,8 @@ import com.github.lucasfsousa.pricetag.ParseException;
 import com.github.lucasfsousa.pricetag.PriceTag;
 import com.github.lucasfsousa.pricetag.Product;
 import com.github.lucasfsousa.pricetag.ScraperNotFoundException;
-import de.gernotpointner.pricetagexperiments.de.gernotpointner.pricetagexperiments.trackedproducts.TrackedProduct;
-import de.gernotpointner.pricetagexperiments.de.gernotpointner.pricetagexperiments.trackedproducts.TrackedProductScraper;
+import de.gernotpointner.pricetagexperiments.trackedproducts.TrackedProduct;
+import de.gernotpointner.pricetagexperiments.trackedproducts.TrackedProductScraper;
 import de.gernotpointner.pricetagexperiments.scraping.ScrapedProduct;
 
 import java.util.ArrayList;
