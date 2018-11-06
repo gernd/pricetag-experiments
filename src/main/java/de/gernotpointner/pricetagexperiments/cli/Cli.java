@@ -1,10 +1,13 @@
 package de.gernotpointner.pricetagexperiments.cli;
 
 import com.github.lucasfsousa.pricetag.Product;
+import de.gernotpointner.pricetagexperiments.pricealarm.Limit;
+import de.gernotpointner.pricetagexperiments.pricealarm.PriceAlarmChecker;
+import de.gernotpointner.pricetagexperiments.scraping.ScrapedProduct;
 import de.gernotpointner.pricetagexperiments.trackedproducts.TrackedProduct;
 import de.gernotpointner.pricetagexperiments.trackedproducts.TrackedProductScraper;
-import de.gernotpointner.pricetagexperiments.scraping.ScrapedProduct;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -62,7 +65,18 @@ public class Cli {
             } else {
                 System.out.println("No cheapest product could be found");
             }
+            System.out.println("Checking price alarms for " + scrapedProduct.name);
+            // price alarms
+            Limit limit = new Limit(new BigDecimal("15.00"));
+            PriceAlarmChecker priceAlarmChecker = new PriceAlarmChecker();
+            Collection<Product> lessThanLimit = priceAlarmChecker.checkPriceAlarms(scrapedProduct, limit);
+            if (!lessThanLimit.isEmpty()) {
+                System.out.println("Price alarm for: ");
+                lessThanLimit.forEach(productAlarm -> System.out.println(productAlarm.getStore() + " : " + productAlarm
+                        .getPriceAsText()));
+            }
         });
+
     }
 
     private static List<TrackedProduct> createTrackedProducts() {
@@ -74,6 +88,7 @@ public class Cli {
                 "https://www.mediamarkt.de/de/product/_battle-chasers-nightwar-rollenspiel-playstation-4-2293619.html");
         battleChasersForPs4.shopUrls.add(
                 "notworking");
+        battleChasersForPs4.shopUrls.add("https://www.gamestop.de/PS4/Games/45092/battle-chasers-nightwar");
 
         TrackedProduct crackingTheCodingInterview = new TrackedProduct("Cracking the coding interview");
         crackingTheCodingInterview.shopUrls.add(
