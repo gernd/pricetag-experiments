@@ -19,5 +19,6 @@
 
     <modules>
         <module>cli</module>
+        <module>rest-service</module>
     </modules>
 </project>
