@@ -15,4 +15,17 @@ public class TrackedProduct {
         productName = name;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || !(o instanceof TrackedProduct)) {
+            return false;
+        }
+        TrackedProduct other = (TrackedProduct) o;
+        return other.productName.equals(this.productName);
+    }
+
+    @Override
+    public int hashCode() {
+        return productName.hashCode();
+    }
 }
