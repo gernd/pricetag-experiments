@@ -10,6 +10,13 @@
     <version>1.0</version>
     <name>Pricetag Experiments</name>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.9</maven.compiler.source>
+        <maven.compiler.target>1.9</maven.compiler.target>
+        <junit-version>4.12</junit-version>
+    </properties>
+
     <modules>
         <module>cli</module>
     </modules>

@@ -14,13 +14,6 @@
     <name>pricetag-experiments-cli</name>
     <description>CLI for testing pricetag experiments</description>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <junit-version>4.12</junit-version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
