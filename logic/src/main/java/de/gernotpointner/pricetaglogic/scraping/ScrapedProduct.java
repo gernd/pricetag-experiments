@@ -41,4 +41,9 @@ public class ScrapedProduct {
                         (firstProduct, secondProduct) -> firstProduct.getPrice()
                                                                      .compareTo(secondProduct.getPrice()));
     }
+
+    @Override
+    public String toString() {
+        return "ScrapedProduct " + name;
+    }
 }
