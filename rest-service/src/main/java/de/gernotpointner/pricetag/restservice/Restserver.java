@@ -1,4 +1,4 @@
-package de.gernotpointner.pricetag.restserver;
+package de.gernotpointner.pricetag.restservice;
 
 import com.google.gson.Gson;
 import de.gernotpointner.pricetaglogic.scraping.ScrapedProduct;

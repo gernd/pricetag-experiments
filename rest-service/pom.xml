@@ -7,12 +7,12 @@
         <artifactId>pricetag-experiments</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>pricetag-experiments-restserver</artifactId>
+    <artifactId>pricetag-experiments-restservice</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>pricetag-experiments-restserver</name>
-    <description>simple-pricetag-restserver</description>
+    <name>pricetag-experiments-restservice</name>
+    <description>simple-pricetag-restservice</description>
 
     <dependencies>
         <dependency>
