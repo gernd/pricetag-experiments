@@ -1,7 +1,7 @@
 package de.gernotpointner.pricetagexperiments.pricealarm;
 
 import com.github.lucasfsousa.pricetag.Product;
-import de.gernotpointner.pricetagexperiments.scraping.ScrapedProduct;
+import de.gernotpointner.pricetaglogic.scraping.ScrapedProduct;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

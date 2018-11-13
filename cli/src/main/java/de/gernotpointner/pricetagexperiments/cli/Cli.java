@@ -3,9 +3,9 @@ package de.gernotpointner.pricetagexperiments.cli;
 import com.github.lucasfsousa.pricetag.Product;
 import de.gernotpointner.pricetagexperiments.pricealarm.Limit;
 import de.gernotpointner.pricetagexperiments.pricealarm.PriceAlarmChecker;
-import de.gernotpointner.pricetagexperiments.scraping.ScrapedProduct;
-import de.gernotpointner.pricetagexperiments.trackedproducts.TrackedProduct;
-import de.gernotpointner.pricetagexperiments.trackedproducts.TrackedProductScraper;
+import de.gernotpointner.pricetaglogic.scraping.ScrapedProduct;
+import de.gernotpointner.pricetaglogic.trackedproducts.TrackedProduct;
+import de.gernotpointner.pricetaglogic.trackedproducts.TrackedProductScraper;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

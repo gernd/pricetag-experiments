@@ -1,8 +1,8 @@
-package de.gernotpointner.pricetagexperiment;
+package de.gernotpointner.pricetaglogic;
 
 import com.github.lucasfsousa.pricetag.Product;
-import de.gernotpointner.pricetagexperiments.scraping.ScrapeResult;
-import de.gernotpointner.pricetagexperiments.scraping.ScrapedProduct;
+import de.gernotpointner.pricetaglogic.scraping.ScrapeResult;
+import de.gernotpointner.pricetaglogic.scraping.ScrapedProduct;
 import org.junit.Assert;
 import org.junit.Test;
 

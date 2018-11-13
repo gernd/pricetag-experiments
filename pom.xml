@@ -20,5 +20,6 @@
     <modules>
         <module>cli</module>
         <module>rest-service</module>
+        <module>logic</module>
     </modules>
 </project>

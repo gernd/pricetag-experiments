@@ -1,6 +1,6 @@
-package de.gernotpointner.pricetagexperiment;
+package de.gernotpointner.pricetaglogic;
 
-import de.gernotpointner.pricetagexperiments.trackedproducts.TrackedProductScraper;
+import de.gernotpointner.pricetaglogic.trackedproducts.TrackedProductScraper;
 import org.junit.Test;
 
 public class TrackedProductScraperTest {

@@ -1,4 +1,4 @@
-package de.gernotpointner.pricetagexperiments.scraping;
+package de.gernotpointner.pricetaglogic.scraping;
 
 import com.github.lucasfsousa.pricetag.Product;
 

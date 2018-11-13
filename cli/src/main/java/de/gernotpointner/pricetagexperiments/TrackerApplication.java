@@ -1,7 +1,7 @@
 package de.gernotpointner.pricetagexperiments;
 
-import de.gernotpointner.pricetagexperiments.trackedproducts.PriceTracker;
-import de.gernotpointner.pricetagexperiments.trackedproducts.TrackedProduct;
+import de.gernotpointner.pricetaglogic.trackedproducts.PriceTracker;
+import de.gernotpointner.pricetaglogic.trackedproducts.TrackedProduct;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -7,18 +7,24 @@
         <artifactId>pricetag-experiments</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>pricetag-experiments-cli</artifactId>
+    <artifactId>pricetag-experiments-logic</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>pricetag-experiments-cli</name>
-    <description>CLI for testing pricetag experiments</description>
+    <name>pricetag-experiments-logic</name>
+    <description>Functional Wrapper for the pricetag library</description>
 
     <dependencies>
         <dependency>
-            <groupId>de.github.gernd</groupId>
-            <artifactId>pricetag-experiments-logic</artifactId>
-            <version>0.0.1</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit-version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.lucasfsousa</groupId>
+            <artifactId>pricetag</artifactId>
+            <version>0.0.2</version>
         </dependency>
     </dependencies>
 </project>

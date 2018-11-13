@@ -22,9 +22,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.github.lucasfsousa</groupId>
-            <artifactId>pricetag</artifactId>
-            <version>0.0.2</version>
+            <groupId>de.github.gernd</groupId>
+            <artifactId>pricetag-experiments-logic</artifactId>
+            <version>0.0.1</version>
         </dependency>
         <dependency>
             <groupId>com.sparkjava</groupId>

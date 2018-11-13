@@ -1,7 +1,7 @@
-package de.gernotpointner.pricetagexperiments.trackedproducts;
+package de.gernotpointner.pricetaglogic.trackedproducts;
 
-import de.gernotpointner.pricetagexperiments.scraping.ScrapeResult;
-import de.gernotpointner.pricetagexperiments.scraping.ScrapedProduct;
+import de.gernotpointner.pricetaglogic.scraping.ScrapeResult;
+import de.gernotpointner.pricetaglogic.scraping.ScrapedProduct;
 
 import java.util.Collection;
 import java.util.concurrent.Executors;
