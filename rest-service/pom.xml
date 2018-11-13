@@ -22,12 +22,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit-version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>com.github.lucasfsousa</groupId>
             <artifactId>pricetag</artifactId>
             <version>0.0.2</version>
