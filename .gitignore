@@ -28,3 +28,6 @@ target
 # intellij files
 .idea/
 *.iml
+
+# vim swap files
+*.swp
