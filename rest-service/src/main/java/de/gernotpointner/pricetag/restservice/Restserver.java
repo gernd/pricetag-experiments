@@ -8,6 +8,7 @@ import de.gernotpointner.pricetaglogic.trackedproducts.TrackedProductScraper;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static spark.Spark.get;
 
@@ -17,9 +18,16 @@ public class Restserver {
         Gson gson = new Gson();
 
         get("/", (req, res) -> {
-                List<TrackedProduct> trackedProducts = createTrackedProducts();
-                Collection<ScrapedProduct> scrapedProducts = TrackedProductScraper.scapedProducts(trackedProducts);
-                return scrapedProducts;
+            List<TrackedProduct> trackedProducts = createTrackedProducts();
+            System.out.println("Starting to scrape results");
+            Collection<ScrapedProduct> scrapedProducts = TrackedProductScraper.scapedProducts(trackedProducts);
+            System.out.println("Scraping of results finished");
+            return
+                    scrapedProducts
+                            .stream()
+                            .map(scrapedProduct -> scrapedProduct.getSuccessfulScrapes())
+                            .flatMap(scrapeResults -> scrapeResults.stream())
+                            .collect(Collectors.toList());
             }, gson::toJson
         );
     }
