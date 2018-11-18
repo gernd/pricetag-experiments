@@ -19,6 +19,21 @@
         $.get( "http://localhost:4567/", function( data ) {
             console.log("Loading prices from backend");
             console.log(data);
+            var html = "";
+            data.forEach(function(productResponse){
+                html += "<h2>" + productResponse.name + "</h2>";
+                productResponse.scrapeResults.forEach(function(scrapeResult){
+                    html += "<h3>" + scrapeResult.product.value.store + "</h3>";
+                    html += "<p>" + scrapeResult.product.value.title + "</p>";
+                    html += "<p><a href='" + scrapeResult.product.value.url + "'>Link</a><p>";
+                    html += "<p>" + scrapeResult.product.value.priceAsText + "</p>";
+                    if (scrapeResult.product.value.images.length > 0){
+                        html += "<img src='" + scrapeResult.product.value.images[0] + "'></img>";
+                    }
+                });
+            });
+            console.log(html);
+            $("#content").html(html);
         });
     </script>
     </body>
