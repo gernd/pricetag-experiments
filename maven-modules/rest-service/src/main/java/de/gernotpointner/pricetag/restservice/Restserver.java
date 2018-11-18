@@ -8,6 +8,7 @@ import de.gernotpointner.pricetaglogic.trackedproducts.TrackedProductScraper;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import static spark.Spark.before;
@@ -15,6 +16,10 @@ import static spark.Spark.get;
 import static spark.Spark.options;
 
 public class Restserver {
+
+    // poor man's caching
+    private static Collection<ScrapedProduct> resultCache;
+
     public static void main(String[] args) {
 
         enableCORS("*", "*", "*");
@@ -23,16 +28,18 @@ public class Restserver {
 
 
         get("/", (req, res) -> {
-            List<TrackedProduct> trackedProducts = createTrackedProducts();
-            System.out.println("Starting to scrape results");
-            Collection<ScrapedProduct> scrapedProducts = TrackedProductScraper.scapedProducts(trackedProducts);
-            System.out.println("Scraping of results finished");
-            return
-                    scrapedProducts
-                            .stream()
-                            .map(scrapedProduct -> scrapedProduct.getSuccessfulScrapes())
-                            .flatMap(scrapeResults -> scrapeResults.stream())
-                            .collect(Collectors.toList());
+            if (Objects.isNull(resultCache)) {
+                List<TrackedProduct> trackedProducts = createTrackedProducts();
+                System.out.println("Starting to scrape results");
+                Collection<ScrapedProduct> scrapedProducts = TrackedProductScraper.scapedProducts(trackedProducts);
+                System.out.println("Scraping of results finished");
+                resultCache =
+                        scrapedProducts
+                                .stream()
+                                .map(scrapedProduct -> scrapedProduct.productWithSuccessfulScrapes())
+                                .collect(Collectors.toList());
+            }
+            return resultCache;
             }, gson::toJson
         );
     }
