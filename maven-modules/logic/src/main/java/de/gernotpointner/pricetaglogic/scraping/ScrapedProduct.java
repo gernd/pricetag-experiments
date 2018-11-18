@@ -3,7 +3,6 @@ package de.gernotpointner.pricetaglogic.scraping;
 import com.github.lucasfsousa.pricetag.Product;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -11,9 +10,9 @@ public class ScrapedProduct {
 
     public final String name;
 
-    public final List<ScrapeResult> scrapeResults;
+    public final Collection<ScrapeResult> scrapeResults;
 
-    public ScrapedProduct(String name, List<ScrapeResult> scrapeResults) {
+    public ScrapedProduct(String name, Collection<ScrapeResult> scrapeResults) {
         this.name = name;
         this.scrapeResults = scrapeResults;
     }
@@ -40,6 +39,10 @@ public class ScrapedProduct {
                 .min(
                         (firstProduct, secondProduct) -> firstProduct.getPrice()
                                                                      .compareTo(secondProduct.getPrice()));
+    }
+
+    public ScrapedProduct productWithSuccessfulScrapes() {
+        return new ScrapedProduct(name, getSuccessfulScrapes());
     }
 
     @Override
