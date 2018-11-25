@@ -9,19 +9,21 @@ import java.util.Optional;
  */
 public class ScrapeResult {
 
-    public Optional<Product> product = Optional.empty();
+    public final Optional<Product> product;
 
-    public Optional<String> failureReason = Optional.empty();
+    public final Optional<String> failureReason;
 
     public final String url;
 
     public ScrapeResult(String url, Product product) {
         this.url = url;
         this.product = Optional.of(product);
+        this.failureReason = Optional.empty();
     }
 
     public ScrapeResult(String url, String failureReason) {
         this.url = url;
         this.failureReason = Optional.of(failureReason);
+        this.product = Optional.empty();
     }
 }
